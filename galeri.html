@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Galeri Kenangan</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, black, rgb(170, 0, 255), blue, black );
+    color: #333;
+  }
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 0.05em;
+  user-select: none;
+
+  color: white;
+  animation: rgbBackground 6s linear infinite, rgbTextGlow 5s linear infinite;
+
+  /* Gradient panjang ungu ke biru dan bolak-balik */
+  background: linear-gradient(270deg, rgb(200, 0, 255), blue, rgb(200, 0, 255));
+  background-size: 300% 300%;
+  background-position: 0% 50%;
+
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #000000,
+    0 0 20px #fff;
+}
+
+@keyframes rgbBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+  @keyframes rgbText {
+      0%   {color: red;}
+      33%  {color: lime;}
+      66%  {color: blue;}
+      100% {color: red;}
+    }
+  main.gallery {
+    max-width: 400px;
+    margin: 2rem auto 4rem;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 16px;
+  }
+  .photo-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .photo-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 10px 20px rgb(0 0 0 / 0.15);
+  }
+  .photo-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 4px solid #667eea;
+  }
+  .photo-caption {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    color: white;
+    text-align: center;
+    user-select: none;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rgbText 3s infinite linear;
+  }
+  @keyframes rgbText {
+      0%   {color: red;}
+      33%  {color: lime;}
+      66%  {color: blue;}
+      100% {color: red;}
+    }
+  @media (max-width: 480px) {
+    header {
+      font-size: 1.8rem;
+      padding: 1.5rem 1rem;
+    }
+    .photo-card img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      display: flex;
+      border-bottom: 4px solid #667eea;
+    }
+
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+    .menu a {
+      display: block;
+      margin: 100px auto;
+      padding: 12px 25px;
+      font-size: 1.1em;
+      text-align: center;
+      border: 2px solid #ffffff;
+      border-radius: 25px;
+      background: transparent;
+      color: #ffffff;
+      text-decoration: none;
+      width: 30%;
+      max-width: 300px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .menu a:hover {
+      background: #fff;
+      color: #8e44ad;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #8e44ad;
+    }
+</style>
+</head>
+<body>
+  <header>Lihatlah dirimu, betapa cantiknya kamuuu :)</header>
+  <main class="gallery" aria-label="Photo gallery of memory images">
+    <!-- Galeri nnti di isi sama JS -->
+  </main>
+  <script>
+    const gallery = document.querySelector('.gallery');
+    const photoUrls = [
+      "https://i.pinimg.com/736x/e7/d7/bb/e7d7bbef4079922020239e020cf0646a.jpg",
+      "https://i.pinimg.com/736x/a5/b3/34/a5b334d1e35172bccb3811ff3d000ff4.jpg",
+      "https://i.pinimg.com/736x/3d/dd/1b/3ddd1baa184f7379585020af346af9f1.jpg",
+      "https://i.pinimg.com/736x/74/81/c8/7481c800a1f0a548524898098cad0f5f.jpg",
+      "https://i.pinimg.com/736x/c6/95/fd/c695fd59d2c036d5cf3144d8cc7b87fe.jpg",
+      "https://i.pinimg.com/736x/b0/01/55/b001555d7be4e12bbda9681ffa25851b.jpg",
+      "https://i.pinimg.com/736x/60/b9/34/60b934d1619a5d6f3ec4dd90cc29be90.jpg",
+      "https://i.pinimg.com/736x/8c/8b/ce/8c8bce5b91137f3d055ccbed122537ba.jpg",
+      "https://i.pinimg.com/736x/66/3d/1b/663d1be8e9ea6454769687d9a6356629.jpg",
+      "https://i.pinimg.com/736x/b8/f8/83/b8f883318d301822e1e3b436776ff639.jpg",
+      "https://i.pinimg.com/736x/b7/a4/a4/b7a4a412435987e81d79677ed22b258b.jpg",
+      "https://i.pinimg.com/736x/5b/9f/e8/5b9fe8a8a18be56c1b1079db09761f45.jpg",
+      "https://i.pinimg.com/736x/48/d1/f0/48d1f0f87a7696e08b8592a12fafd436.jpg",
+      "https://i.pinimg.com/736x/e0/a7/6d/e0a76d189edc863a0878d787cc4e1c23.jpg",
+      "https://i.pinimg.com/736x/7b/28/00/7b28003c81518c5adbde79e103858917.jpg",
+      "https://i.pinimg.com/736x/8d/f9/e8/8df9e80b01aae7b8916ac2525b66b4e8.jpg",
+      "https://i.pinimg.com/736x/82/37/21/823721da9125bd0574b7a69f61ae1a39.jpg",
+      "https://i.pinimg.com/736x/29/f2/87/29f2873f06d6a16e339aefb41096defb.jpg",
+      "https://i.pinimg.com/736x/44/c5/b1/44c5b101eca1c2198054f37a6b651f7b.jpg",
+      "https://i.pinimg.com/736x/c5/a7/72/c5a772f6d7114582a50c1f1569c9d6a7.jpg",
+      "https://i.pinimg.com/736x/96/82/19/9682195a52af9f50aad5b04ce74a25bc.jpg",
+      "https://i.pinimg.com/736x/4d/d1/b1/4dd1b1d6fbc4bbd7c089e301cbe8c98a.jpg",
+      "https://i.pinimg.com/736x/1b/8e/d4/1b8ed467539ccf00098f38d19822180d.jpg",
+      "https://i.pinimg.com/736x/f8/4a/b7/f84ab722628f417ca814c3ae9d5eb696.jpg",
+      "https://i.pinimg.com/736x/fd/36/8a/fd368a060a8c3a03ffc3aa0d043eac54.jpg",
+      "https://i.pinimg.com/736x/e9/aa/81/e9aa81c985fe805866fa51a33b790264.jpg",
+      "https://i.pinimg.com/736x/c6/dc/6c/c6dc6cf14feb90c987d76c272226dce8.jpg",
+      "https://i.pinimg.com/736x/59/86/0c/59860cb60e057faf7b3f7bd29975bbfe.jpg",
+      "https://i.pinimg.com/736x/b9/69/f1/b969f133df6977cc3bcc0b4125f8eac9.jpg",
+      "https://i.pinimg.com/736x/c6/8a/68/c68a68c98ca73f20fb33922c78b04901.jpg",
+      "https://i.pinimg.com/736x/56/f9/93/56f9930b3969f402ad867c8928e04190.jpg",
+      "https://i.pinimg.com/736x/e7/ee/a0/e7eea07fa039d2f61b14b10c7226b4b2.jpg",
+      "https://i.pinimg.com/736x/81/76/b6/8176b6cd979dd0a475569cc8df39a615.jpg",
+      "https://i.pinimg.com/736x/d5/82/60/d582609c4524107973d7c95939c12f94.jpg",
+      "https://i.pinimg.com/736x/68/c3/46/68c34629a4a37dc626a4ddaefad25d5c.jpg",
+      "https://i.pinimg.com/736x/40/c2/8e/40c28e8281ff1471d382ca71e5805058.jpg",
+      "https://i.pinimg.com/736x/91/22/39/9122396ff68b676ec164c75bb5ab331b.jpg",
+      "https://i.pinimg.com/736x/fa/7d/ee/fa7dee54a4fa8e226757eb25615a73eb.jpg",
+      "https://i.pinimg.com/736x/7d/cc/ec/7dccec8797d1f4723b0ded713039f9ed.jpg",
+      "https://i.pinimg.com/736x/54/98/9d/54989d83a322f189ebe39aafe41f7abf.jpg",
+      "https://i.pinimg.com/736x/d5/dc/27/d5dc277136ead431a3cc690a04a1e234.jpg",
+      "https://i.pinimg.com/736x/01/3c/aa/013caa009b7c200366e168e2429dd36e.jpg",
+      "https://i.pinimg.com/736x/00/b8/a4/00b8a42f3a37aba5aa4089763b8612c3.jpg",
+      "https://i.pinimg.com/736x/46/c9/d6/46c9d60667ecda3cd75c0f16eea8cd00.jpg",
+      "https://i.pinimg.com/736x/8c/ec/8a/8cec8aeaa2c5408b47c407ca72057b0b.jpg",
+      "https://i.pinimg.com/736x/88/07/ec/8807eca6215374f18124074eb85827d8.jpg",
+      "https://i.pinimg.com/736x/04/93/e8/0493e8a8c8accde92f722b45a296f775.jpg",
+      "https://i.pinimg.com/736x/12/a6/82/12a682153eb828e5ad99fe4417212deb.jpg",
+      "https://i.pinimg.com/736x/30/a6/4a/30a64a7cea020a91264630a8b075e8a5.jpg",
+      "https://i.pinimg.com/736x/9e/9a/bb/9e9abb76969d0b232a495314898dd9f3.jpg",
+      "https://i.pinimg.com/736x/60/b9/34/60b934d1619a5d6f3ec4dd90cc29be90.jpg",
+      "https://i.pinimg.com/736x/eb/ba/00/ebba001bda4a7c1e6c0e006a47b1fdcf.jpg",
+      "https://i.pinimg.com/736x/7b/e7/c1/7be7c1c28009c952a5e21e5001ac8f49.jpg",
+      "https://i.pinimg.com/736x/a1/6c/7d/a16c7d912486643d6c78b92f177b67d1.jpg",
+      "https://i.pinimg.com/736x/23/a4/33/23a433a7ca7b3b332a94e1eab37e75af.jpg",
+      "https://i.pinimg.com/736x/3e/0d/3e/3e0d3e5b33b89629890fc5df6c131622.jpg"
+    ];
+
+    //poto dari pin, jadi nnti klo lupa tinggal re upload
+
+    for (let i = 0; i < photoUrls.length; i++) {
+      const photoUrl = photoUrls[i];
+      const photoNum = i + 1;
+
+      const card = document.createElement('div');
+      card.className = 'photo-card';
+
+      card.innerHTML = `
+        <img src="${photoUrl}" alt="Photo ${photoNum}" loading="lazy" />
+        <div class="photo-caption">Photo ${photoNum}</div>
+      `;
+
+      gallery.appendChild(card);
+    }
+  </script>
+  <div class="menu">
+    <a href="index.html" target="_self">Kembali</a>
+  </div>
+</body>
+</html>
+

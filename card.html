@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kartu Cinta untuk Kamu</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      color: #3a1c71;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      max-width: 450px;
+      width: 100%;
+      box-shadow: 0 15px 25px rgba(58, 28, 113, 0.25);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 25px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 25px 35px rgba(58, 28, 113, 0.35);
+    }
+    .photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: url('https://i.pinimg.com/736x/62/34/96/6234969ea4dc3077aac38ce024ec903f.jpg') center/cover no-repeat;
+      border: 5px solid #fda085;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 15px rgba(253, 160, 133, 0.6);
+    }
+    h1 {
+      margin: 0;
+      font-weight: 600;
+      font-size: 2.2em;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    p {
+      margin-top: 15px;
+      font-weight: 300;
+      font-size: 1.1em;
+      line-height: 1.6;
+      text-align: center;
+      color: #555;
+    }
+    footer {
+      margin-top: 30px;
+      font-style: italic;
+      font-weight: 300;
+      color: #9b59b6;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 25px 15px;
+      }
+      .photo {
+        width: 120px;
+        height: 120px;
+        border-width: 4px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+      p {
+        font-size: 1em;
+      }
+    }
+    .button {
+      margin-top: 30px;
+      padding: 0px;
+      background: black;
+      border: 2px solid #7700ff;
+      border-radius: 10px 10px 0 0;
+      display: inline-block;
+      width: 290px;
+      height: 92px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 5px 15px (0,0,0,0.2);
+    }
+    .button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    .button:active {
+      transform: translateY(2px);
+      box-shadow: 0 4px 10px (0,0,0,0.2);
+    }
+    .button h2 {
+      margin-bottom: 1px;
+      font-size: 0.8em;
+      text-align: center;
+      animation: rgbText 3s infinite linear;
+    }
+    @keyframes rgbText {
+      0%   {color: red;}
+      33%  {color: lime;}
+      66%  {color: blue;}
+      100% {color: red;}
+    }
+    .button a {
+      display: block;
+      text-align: center;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 1.2em;
+      color: #fff;
+      text-decoration: none;
+      border: 2px solid #7700ff;
+      border-radius: 0px;
+      transition: 0.3s;
+    }
+    .button a:hover {
+      background-color: #fff;
+      color: #000;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="card" role="main" aria-label="Kartu cinta untuk kekasih">
+    <div class="photo" alt="Foto cantik kekasih"></div>
+    <h1>Untuk Andini Tercinta💝</h1>
+    <p>
+      Selamat datang di hatiku!<br />
+      Kamu adalah cahaya terang yang memberi warna pada hidupku.<br />
+      Aku mencintaimu lebih dari kata-kata bisa ungkapkan.<br />
+      Semoga hari-harimu selalu penuh dengan kebahagiaan seperti kamu berbagi kebahagiaan dengan aku.
+    </p>
+    <footer>Dengan segenap cinta, untukmu ❤️</footer>
+    <div class="button">
+      <h2>Klik untuk kembali</h2>
+      <a href="" target="_self">KEMBALI</a>
+    </div>
+  </div>
+</body>
+</html>
+

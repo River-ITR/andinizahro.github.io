@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waktu yang Sudah Berlalu</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top, black, rgb(153, 0, 255), rgb(0, 4, 255), black);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      text-align: center;
+      padding: 5vw;
+    }
+
+    h1 {
+      font-size: 6vw;
+      color: #ffffff;
+    }
+
+    #elapsed {
+      font-size: 7vw;
+      color: #ffffff;
+      margin-top: 5vw;
+    }
+
+    .label {
+      font-size: 4vw;
+      color: #ffffff;
+    }
+
+    .extraText {
+      margin-top: 8vw;
+      font-size: 4vw;
+      color: #ffffff;
+      font-style: italic;
+    }
+
+    .menu a {
+      display: block;
+      margin: 8vw auto;
+      padding: 3vw 5vw;
+      font-size: 4vw;
+      border: 2px solid #ffffff;
+      border-radius: 25px;
+      background: transparent;
+      color: #ffffff;
+      text-decoration: none;
+      width: 60%;
+      max-width: 300px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .menu a:hover {
+      background: #002aff;
+      color: #8e44ad;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #8e44ad;
+    }
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 15px;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .photo-caption {
+      font-size: 4vw;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Kita Sudah Bersama Sejak</h1>
+  <div class="label">15 Februari 2025, pukul 20:33 WIB<br>Itu artinya kita sudah menjalin hubungan selama :</div>
+  <div id="elapsed">Loading...</div>
+
+  <div class="extraText">
+    "Setiap detik yang lewat adalah langkah menuju masa depan"<br>
+    Terimakasih atas segala yang kamu berikan kepadaku<br>
+    Aku belum bisa memberi segalanya untukmu<br>
+    Aku hanya laki-laki biasa yang tak punya apa-apa<br>
+    Maaf ya kalau aku masih banyak kurangnya<br>
+    Aku mohon jangan tinggalin aku<br>
+    Kalau ada salah mohon dimaafkan<br>
+    baik yang disengaja maupun yang tidak sengaja,<br>
+    aku pun manusia, punya salah,<br>
+    Kalau kamu tak pernah salah<br>
+    Kamu kan malaikat kecilkuuuu<br>
+    LOPYUUU ANDINN SAYANGGG💝
+  </div>
+
+  <!-- Tambahin foto di sini kalau mau -->
+  <!-- <img src="foto1.jpg" alt="Foto 1">
+  <div class="photo-caption">Foto kita waktu itu 😍</div> -->
+
+  <script>
+    const awal = new Date("2025-02-15T13:33:00Z"); // UTC+7 (WIB) == 13:33 UTC
+
+    function updateElapsed() {
+      const sekarang = new Date();
+      let selisihMs = sekarang - awal;
+
+      const detik = Math.floor((selisihMs / 1000) % 60);
+      const menit = Math.floor((selisihMs / (1000 * 60)) % 60);
+      const jam   = Math.floor((selisihMs / (1000 * 60 * 60)) % 24);
+      const hari  = Math.floor(selisihMs / (1000 * 60 * 60 * 24));
+
+      document.getElementById("elapsed").textContent =
+        `${hari} hari, ${jam} jam, ${menit} menit, ${detik} detik`;
+    }
+
+    updateElapsed();
+    setInterval(updateElapsed, 1000);
+  </script>
+
+  <div class="menu">
+    <a href="index.html">Kembali</a>
+  </div>
+
+</body>
+</html>

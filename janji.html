@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Janji ku</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: italic;
+      background: linear-gradient(to bottom, black, blue, rgb(200, 0, 255), black);
+      text-align: center;
+      padding: 50px;
+      color: white;
+    }
+
+    .extraText {
+      margin-top: 40px;
+      font-size: 22px;
+      color: #ffffff;
+      font-style: italic;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.9;
+    }
+
+    .button {
+      display: block;
+      margin: 100px auto 0 auto;
+      padding: 12px 25px;
+      font-size: 1.1em;
+      border: 2px solid white;
+      border-radius: 25px;
+      background: transparent;
+      color: #ffffff;
+      text-decoration: none;
+      width: 30%;
+      max-width: 300px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .button:hover {
+      background: blue;
+      color: rgb(200, 0, 255);
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgb(200, 0, 255);
+    }
+
+    .heart {
+      position: fixed;
+      top: -10px;
+      font-size: 24px;
+      color: pink;
+      animation: fall 7s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Musik Latar -->
+  <audio autoplay loop>
+    <source src="" type="audio/mp3">
+    Browser kamu tidak mendukung audio.
+  </audio>
+
+  <!-- Isi Surat -->
+  <div class="extraText">
+    <br>
+Aku mungkin bukan yang paling sempurna,<br>
+tapi aku berjanji akan selalu berusaha jadi yang terbaik untukmu.<br>
+Aku janji akan menemanimu, dalam tawa maupun tangis,<br>
+dalam senang maupun susah,<br>
+dalam hari-hari biasa, dan saat dunia terasa berat.<br><br>
+
+Aku janji untuk mendengarkanmu,<br>
+bukan hanya dengan telinga, tapi dengan hati.<br>
+Aku janji untuk tidak menyerah pada kita,<br>
+meski kadang jalan kita tak selalu mulus.<br><br>
+
+Tiada hubungan tanpa masalah,<br>
+Tiada ketulusan tanpa keikhlasan,<br>
+dan Tiada cinta tanpa luka,<br>
+kalau gk ngerti, maksudnya adalah dalam menjalin hubungan,<br>
+sakit hati itu bagian dari perjalanan, sama seperti peribahasa<br>
+"Tiada pelangi tanpa hujan" yang artinya hal yang indah perlu melewati<br>
+rasa sakit dahulu.<br><br>
+
+Aku akan jadi rumahmu—tempat kamu merasa aman, nyaman, dan dicintai.<br>
+Dan yang paling penting, aku janji akan mencintaimu setiap hari,<br>
+bukan hanya saat semuanya mudah, tapi juga saat semuanya sulit.<br><br>
+
+Dengan sepenuh hati,<br>
+aku memilih kamu. Hari ini, besok, dan selamanya.<br><br>
+
+    Sipispis, 2 Juni 2025
+  </div>
+
+  <a href="index.html" class="button" target="_self">Kembali</a>
+
+  <!-- Animasi Hati -->
+  <script>
+    function buatHati() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+    setInterval(buatHati, 300);
+  </script>
+
+</body>
+</html>
